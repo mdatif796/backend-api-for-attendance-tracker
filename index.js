@@ -1,7 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = 8000;
+
+// setting up database connection
+const db = require('./config/databaseConnection');
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 
 
