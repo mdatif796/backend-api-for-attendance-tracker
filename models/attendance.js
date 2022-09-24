@@ -3,16 +3,16 @@ const mongoose = require('mongoose');
 const attendanceSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: User
+        ref: 'User'
     },
-    markPresent: {
-        type: Boolean,
-        required: true
+    date: {
+        type: Date,
+        default: new Date
     }
 }, {
     timestamps: true
 });
 
-const Attendance = new mongoose.model('Attendance', attendanceSchema);
+const Attendance = mongoose.model('Attendance', attendanceSchema);
 
 module.exports = Attendance;
