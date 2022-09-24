@@ -1,5 +1,10 @@
 # backend-api-for-attendance-tracker
 This nodeJs backend Api is used to track the attendance system .
+# First create a .env file in the root folder of this project and write these key value pair in .env file
+1.MONGO_USER=your mongodb user id
+2.DATABASE_PASS=your database password
+3.MONGO_DATABASE=database collection name
+4.JWTSECRETKEY=your jwt secret key
 # For testing this api in your local system
 1. Fork and Clone this repo.
 2. open CLI in the route folder of this project.
