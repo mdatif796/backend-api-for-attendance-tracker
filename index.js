@@ -9,6 +9,8 @@ const db = require('./config/databaseConnection');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use('/', require('./routes'));
+
 
 
 
