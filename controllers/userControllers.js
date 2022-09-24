@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const jwt = require('jsonwebtoken');
 
 module.exports.createUser = async function(req, res){
     try {
@@ -30,7 +31,10 @@ module.exports.createUser = async function(req, res){
 
 
 module.exports.createSession = async function(req, res){
-    // first find if user exist or not
+    
+    try {
+        
+        // first find if user exist or not
     let user = await User.findOne({email: req.body.email});
 
     // if user not found or password doesn't match
@@ -42,7 +46,17 @@ module.exports.createSession = async function(req, res){
 
     // if password matches then...
     return res.status(200).json({
-        messages: 'User signed in'
+        messages: 'User session is created !!! and the jwt token is created',
+        token: {
+            data: jwt.sign(user.toJSON(), process.env.JWTSECRETKEY, {expiresIn: 100000})
+        }
     });
+
+    } catch (error) {
+        return res.status(500).json({
+            message: 'Internal Server Error',
+            error: error
+        });
+    }
 
 }
