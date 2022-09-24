@@ -7,6 +7,9 @@ const port = 8000;
 // setting up database connection
 const db = require('./config/databaseConnection');
 
+// setting up the passport-jwt-strategy
+const passportJwtStrategy = require('./config/passport-jwt-strategy');
+
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/', require('./routes'));
