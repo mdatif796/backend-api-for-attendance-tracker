@@ -8,7 +8,7 @@ This nodeJs backend Api is used to track the attendance system .
 # For testing this api in your local system
 1. Fork and Clone this repo.
 2. open CLI in the route folder of this project.
-3. Run "npm start" command.
+3. First run "npm install" command and then run "npm start" command.
 4. Now you can test this Api for marking the attendance.
 5. First you need to sign up the user.
 6. After that, create a login session for this user.Because marking the attendance need the authorize user which is done by creating the jsonwe
